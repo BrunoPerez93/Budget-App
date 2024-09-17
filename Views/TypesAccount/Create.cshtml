@@ -1,0 +1,25 @@
+﻿@model TypeAccount
+
+@{
+    ViewData["Title"] = "Create Type Account";
+}
+
+<h1>Create Type Account</h1>
+<h5>The type of the account it means the way you can group accounts. Example: Loans, credit card, etc.</h5>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<form asp-controller="TypesAccount" asp-action="Create">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send</button>
+    <a class="btn btn-secondary" asp-action="Index">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

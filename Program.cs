@@ -1,7 +1,10 @@
+using BudgetApp.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IRespositoryTypesAccount, RepositoryTypesAccount>();
 
 var app = builder.Build();
 
